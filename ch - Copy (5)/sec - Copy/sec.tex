@@ -1,4 +1,23 @@
 \section{Introduction}
+\textbf{Exercise 5.1.1} Suppose that the double complex $E$ consists solely of the two columns $p$ and $p-1$. Fix $n$ and set $q = n - p$, so that an element of $H_n(T)$ is represented by an element $(a, b) \in E_{p-1,q+1} \times E_{pq}$. Show that we have calculated the homology of $T = \text{Tot}(E)$ up to extension in the sense that there is a short exact sequence
+\[
+0 \to E^2_{p-1,q+1} \to H_{p+q}(T) \to E^2_{pq} \to 0.
+\]
+
+\textbf{Exercise 5.1.2} (Differentials at the $E^2$ stage)
+\begin{enumerate}
+    \item Show that $E^2_{pq}$ can be presented as the group of all pairs $(a, b)$ in $E_{p-1,q+1} \times E_{pq}$ such that $0 = d^v b = d^v a + d^h b$, modulo the relation that these pairs are trivial: $(a, 0)$; $(d^h x, d^v x)$ for $x \in E_{p,q+1}$; and $(0, d^h c)$ for all $c \in E_{p+1,q}$ with $d^v c = 0$.
+    \item If $d^h(a) = 0$, show that such a pair $(a, b)$ determines an element of $H_{p+q}(T)$.
+    \item Show that the formula $d(a, b) = (0, d^h(a))$ determines a well-defined map
+    \[
+    d: E^2_{pq} \to E^2_{p-2,q+1}.
+    \]
+\end{enumerate}
+
+\textbf{Exercise 5.1.3} (Exact sequence of low degree terms) Recall that we have assumed that $E^0_{pq}$ vanishes unless both $p \geq 0$ and $q \geq 0$. By diagram chasing, show that $E^2_{00} = H_0(T)$ and that there is an exact sequence
+\[
+H_2(T) \to E^2_{20} \xrightarrow{d} E^2_{01} \to H_1(T) \to E^2_{10} \to 0.
+\]
 \subfile{subsec - Copy/subsec.tex}
 \subfile{subsec - Copy (2)/subsec.tex}
 \subfile{subsec - Copy (3)/subsec.tex}

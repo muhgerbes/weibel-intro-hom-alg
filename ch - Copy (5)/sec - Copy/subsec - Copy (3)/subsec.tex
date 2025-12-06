@@ -1,4 +1,4 @@
-\subsection{written by zin3724}
+\subsection{written by: Yaxin LI}
 An element $\bar x$ in
 \[H_0(T)=E^0_{0,0}/\im(d^h+d^v)\]
 can (after choosing a representative $x$ in the class of $\bar x$) be written as
@@ -6,6 +6,32 @@ can (after choosing a representative $x$ in the class of $\bar x$) be written as
 \[=(x+\im(d^v))+(\im(d^h)+\im(d^v))=(x+\im(d^v))+\im(d^h)/\im(d^v),\]
 which is clearly an element of $E^2_{0,0}$.
 
-To see that the sequence
-\[H_2(T)\to E^2_{2,0}\overset{d}{\to} E^2_{0,1}\to H_1(T)\to E^2_{1,0}\to0\]
-is exact, qwen2.5-coder:1.5b slop begins here: we can use the fact that we have a short exact sequence
+For the following,
+\[(y,a,b)\in E_{0,2}\times E_{1,1}\times E_{2,0}\]
+\[(w,z)\in E_{0,1}\times E_{1,0}\]
+and we abuse notation by using the same symbols for their equivalence classes.
+\subsubsection*{\texorpdfstring{$(y,a,b)\mapsto(a,b)$}{projection} \texorpdfstring{\textbf{is}}{is} \texorpdfstring{\textbf{a}}{a} \texorpdfstring{\textbf{valid}}{valid} \texorpdfstring{\textbf{map}}{map}}
+We know that $d^v(b)=0$ because we assume that $E^0$ is first-quadrant, and $d^v(a)+d^h(b)=0$ because it's the $E^0_{1,0}$ component of $d_T(y,a,b)$, and $(y,a,b)\in\ker{(d_T)}$. By \ref{ex5.1.2(1)}, it's a valid map from $H_2(T)$ to $E^2_{2,0}$.
+\subsubsection*{\texorpdfstring{$\im\subset\ker$}{im⊂ker} \texorpdfstring{\textbf{at}}{at} \texorpdfstring{$E^2_{2,0}$}{E²₂₀}}
+For $(y,a,b)\in H_2(T)$, $d^h(a)=-d^v(y)$, when it maps to $(a,b)\in E^2_{2,0}$, we see that $(a,b)\sim(0,b)$ by \ref{ex5.1.2(1)}, so $d(a,b)=d^h(0)=0$.
+\subsubsection*{\texorpdfstring{$\ker\subset\im$}{ker⊂im} \texorpdfstring{\textbf{at}}{at} \texorpdfstring{$E^2_{2,0}$}{E²₂₀}}
+Suppose $(a,b)\in\ker{(d)}$ with the $d$ from \ref{ex5.1.2(3)}, then by \ref{ex5.1.2(2)}, (a,b) determines an element in $H_2(T)$, so\\
+$(a,b)\in\im\left( H_2(T)\to E^2_{2,0} \right)$.
+\subsubsection*{\texorpdfstring{$\im\subset\ker$}{im⊂ker} \texorpdfstring{\textbf{at}}{at} \texorpdfstring{$E^2_{0,1}$}{E²₀₁}}
+Let $(a,b)\in E^2_{2,0}$ be an arbitrary element, then by \ref{ex5.1.2(1)}, $(a,b)\sim(0,b)$ in $E^2_{2,0}$, so $(a,b)$ maps to $(0,d^h(0))=(0,0)\in E^2_{0,1}$, and must map to $(0,0)\in H_1(T)$.
+\subsubsection*{\texorpdfstring{$\ker\subset\im$}{ker⊂im} \texorpdfstring{\textbf{at}}{at} \texorpdfstring{$E^2_{0,1}$}{E²₀₁}}
+Suppose $(0,w)\in\ker{(E^2_{0,1}\to H_1(T))}$, then it maps to $(w.z)\in H_1(T)$, with $z$ satisfying
+\[w=d^v(y)+d^h(a)\]
+\[z=d^v(a)+d^h(b)\]
+for some $(y,a,b)\in E_{0,2}\times E_{1,1}\times E_{2,0}$, so in $E^2_{0,1}$, we have
+\[(0,w)=(0,d^v(y)+d^h(a))=(d^h(y),d^v(y)+d^h(a))\sim(0,d^h(a)),\]
+which is an element in $\im{\lt(E^2_{2,0}\xra{d}E^2_{0,1}\rt)}$.
+\subsubsection*{\texorpdfstring{$\im\subset\ker$}{im⊂ker} \texorpdfstring{\textbf{at}}{at} \texorpdfstring{$H_1(T)$}{H₁T}}
+Suppose $(0,w)\in E^2_{0,1}$, then it maps to $(w,0)$ in $H_1(T)$ by \ref{ex5.1.1}, which is a trivial pair in $E^2_{1,0}$.
+\subsubsection*{\texorpdfstring{$\ker\subset\im$}{ker⊂im} \texorpdfstring{\textbf{at}}{at} \texorpdfstring{$H_1(T)$}{H₁T}}
+Suppose $(w,z)\in H_1(T)$ maps to 0 in $E^2_{1,0}$, then there exists some $w'\in E_{0,1},a\in E^2_{1,1},b\in E_{2,0}$ such that $d^v(b)=0$, and
+\[w=w'+d^h(a)\]
+\[z=d^v(a)+d^h(b).\]
+Hence $(w,z)\sim(w',0)$ in $H_1(T)$ because $(d^h(a),d^v(a)+d^h(b))=d_T(0,a,b)\in\im{(d_T)}$, which is in the image of $E^2_{0,1}\to H_1(T)$.
+\subsubsection*{\texorpdfstring{\textbf{at}}{at} \texorpdfstring{$E^2_{1,0}$}{E²₁₀}}
+Suppose $(w,z)\in E^2_{1,0}$, then it follows immediately from \ref{ex5.1.2(1)} that $d^v(w)+d^h(z)=0$, so $(w,z)\in\ker{(d_T)}$, and the map $H_1(T)\to E^2_{1,0}$ is surjective.
